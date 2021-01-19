@@ -1,0 +1,41 @@
+:host{
+  box-sizing: border-box;
+  display: block;
+  height: max-content;
+  width: 600px;
+  border: 2px solid lightgray;
+  border-radius: 5px ;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+:host:hover{
+  box-shadow: gray 3px 3px 5px, gray -3px -3px 5px;
+}
+
+.rootData {
+  background-color: honeydew;
+  padding: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  :host {
+    width: 350px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :host {
+    width: 400px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :host {
+    width: 450px;
+    margin-top: 40px;
+  }
+}

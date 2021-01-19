@@ -1,0 +1,13 @@
+.headerText {
+    border-bottom: 1px solid gray;
+    display: flex;
+    padding: 5px 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 {
+    display: inline-block;
+    color: maroon;
+}

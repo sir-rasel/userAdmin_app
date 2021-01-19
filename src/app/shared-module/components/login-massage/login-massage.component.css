@@ -1,0 +1,9 @@
+div {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+div span {
+    font-weight: bold;
+    color: brown;
+}
