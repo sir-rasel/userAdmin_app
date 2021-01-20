@@ -11,3 +11,11 @@ h3 {
     display: inline-block;
     color: maroon;
 }
+
+h3 a {
+    text-decoration: none;
+}
+
+h3 a:hover {
+    color: blueviolet;
+}

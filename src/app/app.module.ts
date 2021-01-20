@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-api/in-memory-data.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { LoginMassageComponent } from './shared-module/components/login-massage/login-massage.component';
-import { RegisterMassageComponent } from './shared-module/components/register-massage/register-massage.component';
+import { HomeComponent } from './static-components/home/home.component';
+import { SharedModule } from './shared-module/shared.module';
 
 
 @NgModule({
@@ -21,8 +22,7 @@ import { RegisterMassageComponent } from './shared-module/components/register-ma
     HeaderComponent,
     FooterComponent,
     UserIconComponent,
-    LoginMassageComponent,
-    RegisterMassageComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,9 @@ import { RegisterMassageComponent } from './shared-module/components/register-ma
     BsDropdownModule.forRoot(),
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    SharedModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
