@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './static-components/home/home.component';
-
 
 const routes: Routes = [
   {
-    path:'',
-    component:HomeComponent
+    path:'home',
+    loadChildren: () => import('./components/home.module').then(m => m.HomeModule)
   },
   {
     path:'auth',
@@ -14,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
 ];

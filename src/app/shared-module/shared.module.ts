@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginMassageComponent } from './components/login-massage/login-massage.component';
 import { RegisterMassageComponent } from './components/register-massage/register-massage.component';
+import { SharedRoutingModule } from './shared-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { RegisterMassageComponent } from './components/register-massage/register
     RegisterMassageComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedRoutingModule,
   ],
   exports: [
     LoginMassageComponent,
