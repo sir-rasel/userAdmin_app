@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.warn("Submit Log in");
+    console.warn(this.loginForm.value);
   }
 
 }

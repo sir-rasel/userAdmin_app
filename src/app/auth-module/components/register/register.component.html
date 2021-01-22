@@ -1,2 +1,41 @@
-<p>register works!</p>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <label>
+        First Name : 
+        <input type="text" formControlName="FirstName" placeholder="Enter First Name">
+    </label>
+    <br>
+    <label>
+        Last Name : 
+        <input type="text" formControlName="LastName" placeholder="Enter First Name">
+    </label>
+    <br>
+    <label>
+        Email : 
+        <input type="text" formControlName="Email" placeholder="Enter Email">
+    </label>
+    <br>
+    <label>
+        Password : 
+        <input type="text" formControlName="Password" placeholder="Enter Password">
+    </label>
+    <br/>
+    <label>
+        Confirm Password : 
+        <input type="text" formControlName="ConfirmPassword" placeholder="Re-enter Password">
+    </label>
+    <br/>
+    <div formGroupName="Role">
+        <h3>Role : </h3>
+        <label> 
+            <input type="radio" formControlName="user">User
+        </label>
+        <label> 
+            <input type="radio" formControlName="admin">Admin
+        </label>
+        <br/>
+    </div>
+    <button type="submit" class="btn btn-default">Register</button>
+</form>
+<br>
+
 <app-login-massage></app-login-massage>

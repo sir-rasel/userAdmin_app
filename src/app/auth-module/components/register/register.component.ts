@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,10 +7,26 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  
+  registrationForm = this.fb.group({
+    FirstName: [""],
+    LastName: [""],
+    Email: [""],
+    Password: [""],
+    ConfirmPassword: [""],
+    Role: this.fb.group({
+      user:[""],
+      admin:[""],
+    }),
+  });
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    console.warn(this.registrationForm.value);
   }
 
 }
