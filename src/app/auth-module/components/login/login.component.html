@@ -1,16 +1,30 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label>
-      Email : 
-      <input type="text" formControlName="Email" placeholder="Enter Email">
-    </label>
-    <br>
-    <label>
-      Password : 
-      <input type="text" formControlName="Password" placeholder="Enter Password">
-    </label>
-    <br/>
-    <button type="submit" class="btn btn-default">LogIn</button>
-</form>
-<br>
+<div class="card">
+  <h4 class="card-header">Login</h4>
+  <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="email">Email : </label>
+              <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+              <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
+                  <div *ngIf="f.Email.errors.required">Email is required</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="password">Password : </label>
+              <input type="password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+              <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                  <div *ngIf="f.Password.errors.required">Password is required</div>
+                  <div *ngIf="f.Password.errors.minlength">Password should at least 6 digit long</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <button [disabled]="loading" class="btn btn-primary">
+                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                  Login
+              </button>
+          </div>
+      </form>
+  </div>
+</div>
 
 <app-register-massage></app-register-massage>

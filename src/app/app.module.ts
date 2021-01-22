@@ -9,10 +9,11 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-api/in-memory-data.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AuthModule } from './auth-module/auth.module';
-import { HomeModule } from './components/home.module';
+import { HomeModule } from './home-module/home.module';
 import { SharedModule } from './shared-module/shared.module';
-import { HeaderComponent } from './components/header/header.component';
-import { UserIconComponent } from './components/user-icon/user-icon.component';
+import { HeaderComponent } from './_components/header/header.component';
+import { UserIconComponent } from './_components/user-icon/user-icon.component';
+import { FooterComponent } from './_components/footer/footer.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { UserIconComponent } from './components/user-icon/user-icon.component';
     AppComponent,
     HeaderComponent,
     UserIconComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
