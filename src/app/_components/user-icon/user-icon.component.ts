@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-user-icon',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-icon.component.css']
 })
 export class UserIconComponent implements OnInit {
-
-  constructor() { }
+  loginState: any;
+  constructor(private authService:AuthService) {}
 
   ngOnInit(): void {
+    this.onClick();
   }
 
+  onClick(): void {
+    this.loginState = this.authService.getLoginState();
+    console.log(this.loginState);
+  }
 }

@@ -1,12 +1,14 @@
-<div class="btn-group" dropdown>
+<div class="btn-group" dropdown (click)="onClick()">
     <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle"
             aria-controls="dropdown-animated">
         <img src="../../../assets/images/user-icon.png">
     </button>
     <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu dropdown-menu-right"
         role="menu" aria-labelledby="button-animated">
-      <li role="menuitem"><a class="dropdown-item" routerLink="profile">Profile</a></li>
-      <li role="menuitem"><a class="dropdown-item" routerLink="userlist">UserList</a></li>
-      <li role="menuitem"><a class="dropdown-item" routerLink="auth/logout">LogOut</a></li>
+      <li *ngIf="loginState" role="menuitem"><a class="dropdown-item" routerLink="profile">Profile</a></li>
+      <li *ngIf="loginState && loginState.Role === 'admin'" role="menuitem"><a class="dropdown-item" routerLink="userlist">UserList</a></li>
+      <li *ngIf="loginState" role="menuitem"><a class="dropdown-item" routerLink="auth/logout">LogOut</a></li>
+      <li *ngIf="!loginState" role="menuitem"><a class="dropdown-item" routerLink="auth/login">LogIn</a></li>
+      <li *ngIf="!loginState" role="menuitem"><a class="dropdown-item" routerLink="auth/register">Register</a></li>
     </ul>
 </div>

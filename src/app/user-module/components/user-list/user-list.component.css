@@ -1,0 +1,11 @@
+:host {
+    box-sizing: border-box;
+}
+
+th {
+    width: 30%;
+}
+
+#wrapper {
+    white-space: nowrap;
+}

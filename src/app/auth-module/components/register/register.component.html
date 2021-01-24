@@ -1,6 +1,10 @@
 <div class="card">
     <h4 class="card-header">Registration</h4>
     <div class="card-body">
+        <div *ngIf="isEmailExist" class="alert alert-danger" role="alert">
+            Email already exist.
+        </div>
+        
         <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="first-name">First Name : </label>
@@ -18,6 +22,8 @@
                 <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
                 <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
                     <div *ngIf="f.Email.errors.required">Email is required</div>
+                    <div *ngIf="f.Email.errors.pattern">Should valid email pattern</div>
+                    <div *ngIf="f.Email.errors.mismatch">All charecter should not space</div>
                 </div>
             </div>
             <div class="form-group">
@@ -26,6 +32,7 @@
                 <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
                     <div *ngIf="f.Password.errors.required">Password is required</div>
                     <div *ngIf="f.Password.errors.minlength">Password should at least 6 digit</div>
+                    <div *ngIf="f.Password.errors.mismatch">All charecter should not space</div>
                 </div>
             </div>
             <div class="form-group">
@@ -42,6 +49,7 @@
                 <div *ngIf="submitted && f.ConfirmPassword.errors" class="invalid-feedback">
                     <div *ngIf="f.ConfirmPassword.errors.required">Password is required</div>
                     <div *ngIf="f.ConfirmPassword.errors.minlength">Password should at least 6 digit</div>
+                    <div *ngIf="f.ConfirmPassword.errors.mismatch">All charecter should not space</div>
                 </div>
             </div>
             <span>Role: </span>

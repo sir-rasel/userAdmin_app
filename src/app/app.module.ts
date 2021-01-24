@@ -14,6 +14,7 @@ import { SharedModule } from './shared-module/shared.module';
 import { HeaderComponent } from './_components/header/header.component';
 import { UserIconComponent } from './_components/user-icon/user-icon.component';
 import { FooterComponent } from './_components/footer/footer.component';
+import { UserModule } from './user-module/user.module';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FooterComponent } from './_components/footer/footer.component';
     SharedModule,
     AuthModule,
     HomeModule,
+    UserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
