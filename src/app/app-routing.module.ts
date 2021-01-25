@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginAuthenticationGuard } from './_guards/login-authentication.guard';
+import { GetIndividualUserInfo } from './_helper/getIndividualUserInfo';
 
 const routes: Routes = [
   {

@@ -10,7 +10,7 @@
         <tr *ngFor="let user of users">
             <td>{{user.Email}}</td>
             <td id="wrapper">
-                <a routerLink="profile/{{user.id}}/accountInfo" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <a routerLink="profile/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
                 <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
                     <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
                     <span *ngIf="!user.isDeleting">Delete</span>

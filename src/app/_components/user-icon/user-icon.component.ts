@@ -16,6 +16,5 @@ export class UserIconComponent implements OnInit {
 
   onClick(): void {
     this.loginState = this.authService.getLoginState();
-    console.log(this.loginState);
   }
 }

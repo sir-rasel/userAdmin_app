@@ -15,8 +15,8 @@ const routes: Routes = [
     component:UserListComponent,
     children : [
       {
-        path:'profile/:id/accountInfo',
-        redirectTo: '/profile/:id/accountInfo',
+        path:'profile/:id',
+        redirectTo: '/profile/:id',
         pathMatch: 'full',
       },
     ],

@@ -22,6 +22,8 @@ import { PretifyPhoneNumberPipe } from './pipes/pretify-phone-number.pipe';
   exports: [
     LoginMassageComponent,
     RegisterMassageComponent,
+    ItalicStyleDirective,
+    PretifyPhoneNumberPipe,
   ]
 })
 export class SharedModule { }

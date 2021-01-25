@@ -1,22 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AccountInfoComponent } from './components/account-info/account-info.component';
-import { UserInfoComponent } from './components/user-info/user-info.component';
+import { GetIndividualUserInfo } from '../_helper/getIndividualUserInfo';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
     path:':id',
-    children :[
-      {
-        path: 'accountInfo',
-        component: AccountInfoComponent,
-      },
-      {
-        path: 'userInfo',
-        component: UserInfoComponent,
-      },
-    ]
+    component: UserProfileComponent,
+    resolve : {
+      userInformation : GetIndividualUserInfo
+    }
   },
   {
     path:'**',

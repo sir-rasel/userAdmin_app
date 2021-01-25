@@ -36,15 +36,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-    console.warn(this.loginForm.value);
-
+    
     if(this.loginForm.invalid) return;
     
     this.authService.searchUserByEmailAndPassword(this.f.Email.value, this.f.Password.value)
     .subscribe(u => {
       if(u.length !== 0) {
         this.users = u[0];
-        console.log(this.users);
         
         this.loading = true;
         this.authService.setLoginState({id:this.users.id, Email:this.users.Email, Role:this.users.Role});

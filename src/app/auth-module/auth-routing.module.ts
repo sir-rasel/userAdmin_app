@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { LoginAuthenticationGuard } from '../_guards/login-authentication.guard';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
+    canActivate: [LoginAuthenticationGuard],
   },
 ];
 

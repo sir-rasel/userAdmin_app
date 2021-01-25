@@ -47,8 +47,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-    console.warn(this.registrationForm.value);
-
+    
     if(this.registrationForm.invalid) return;
 
     this.authService.searchUsers('Email', this.f.Email.value)
@@ -56,8 +55,10 @@ export class RegisterComponent implements OnInit {
       if(u.length === 0){
         this.authService.addUser(this.registrationForm.value).subscribe(
           val => {
-            if(val)
+            if(val){
+              this.loading = true;
               this.router.navigateByUrl('/auth/login');
+            }
           }  
         );
       }
