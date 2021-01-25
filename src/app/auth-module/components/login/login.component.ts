@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         
         this.loading = true;
         this.authService.setLoginState({id:this.users.id, Email:this.users.Email, Role:this.users.Role});
-        this.router.navigateByUrl('/auth/register');
+        this.router.navigateByUrl('/user');
       }
       else this.isCorrectPassword = false;
     });

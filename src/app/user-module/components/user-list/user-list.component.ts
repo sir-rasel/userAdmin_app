@@ -28,5 +28,4 @@ export class UserListComponent implements OnInit {
     this.authService.deleteUser(id)
       .subscribe(() => this.users = this.users.filter((x: { id: number; }) => x.id !== id));
   }
-
 }

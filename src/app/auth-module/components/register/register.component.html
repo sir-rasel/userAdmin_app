@@ -15,7 +15,10 @@
             </div>
             <div class="form-group">
                 <label for="last-name">Last Name : </label>
-                <input type="text" formControlName="LastName" class="form-control" />
+                <input type="text" formControlName="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }" />
+                <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.LastName.errors.required">Last Name is required</div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="email">Email : </label>

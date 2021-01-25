@@ -15,6 +15,7 @@ import { HeaderComponent } from './_components/header/header.component';
 import { UserIconComponent } from './_components/user-icon/user-icon.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { UserModule } from './user-module/user.module';
+import { ProfileModule } from './profile-module/profile.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { UserModule } from './user-module/user.module';
     AuthModule,
     HomeModule,
     UserModule,
+    ProfileModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
