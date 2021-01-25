@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginAuthenticationGuard } from './_guards/login-authentication.guard';
 
 const routes: Routes = [
   {
@@ -8,15 +9,17 @@ const routes: Routes = [
   },
   {
     path:'auth',
-    loadChildren: () => import('./auth-module/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./auth-module/auth.module').then(m => m.AuthModule),
   },
   {
     path:'user',
-    loadChildren: () => import('./user-module/user.module').then(m => m.UserModule)
+    loadChildren: () => import('./user-module/user.module').then(m => m.UserModule),
+    canActivate: [LoginAuthenticationGuard],
   },
   {
     path:'profile',
-    loadChildren: () => import('./profile-module/profile.module').then(m => m.ProfileModule)
+    loadChildren: () => import('./profile-module/profile.module').then(m => m.ProfileModule),
+    canActivate: [LoginAuthenticationGuard],
   },
   {
     path: '**',

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminAuthenticationGuard } from '../_guards/admin-authentication.guard';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserWelcomeComponent } from './components/user-welcome/user-welcome.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
         pathMatch: 'full',
       },
     ],
+    canActivate: [AdminAuthenticationGuard],
   },
   {
     path:'**',
