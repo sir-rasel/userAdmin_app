@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/_models/User';
 import { AuthService } from 'src/app/_services/auth.service';
 
@@ -12,13 +12,13 @@ export class UserListComponent implements OnInit {
   users:any;
 
   constructor(
-    private router: Router,
+    private _routes: ActivatedRoute,
     private authService:AuthService,
   ) { }
 
   ngOnInit(): void {
-    this.authService.getUsers().subscribe( u =>{
-      this.users = u;
+    this._routes.data.subscribe( u => {
+      this.users = u.users;
     });
   }
 
