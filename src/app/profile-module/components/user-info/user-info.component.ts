@@ -54,11 +54,6 @@ export class UserInfoComponent implements OnInit {
 
   get f() { return this.form.controls; }
 
-  onDateChange(newDate: Date) {
-    let date = new Date(newDate);
-    this.f['DateOfBirth'].setValue(this.datepipe.transform(date, 'dd-MM-yyyy'));
-  }
-
   onSubmit(){
     this.submitted = true;
     
