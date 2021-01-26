@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-api/in-memory-data.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -16,6 +16,7 @@ import { UserIconComponent } from './_components/user-icon/user-icon.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { UserModule } from './user-module/user.module';
 import { ProfileModule } from './profile-module/profile.module';
+import { HttpConfigInterceptor } from './_helper/httpConfig.Interceptor';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { ProfileModule } from './profile-module/profile.module';
     UserModule,
     ProfileModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

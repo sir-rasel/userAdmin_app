@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -22,7 +21,6 @@ export class UserInfoComponent implements OnInit {
     private _routes: ActivatedRoute,
     private authService:AuthService,
     private fb: FormBuilder,
-    private datepipe: DatePipe,
   ) { }
 
   ngOnInit(): void {
